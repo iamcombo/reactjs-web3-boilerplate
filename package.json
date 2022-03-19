@@ -3,18 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
+    "@polkadot/api": "^7.10.1",
+    "@polkadot/extension-dapp": "^0.42.7",
+    "@polkadot/keyring": "^8.4.1",
+    "@polkadot/networks": "^8.4.1",
+    "@polkadot/types": "^7.10.1",
+    "@polkadot/ui-keyring": "^1.1.1",
+    "@polkadot/ui-settings": "^1.1.1",
+    "@polkadot/util": "^8.4.1",
+    "@polkadot/util-crypto": "^8.4.1",
+    "ethers": "^5.6.1",
+    "node-polyfill-webpack-plugin": "^1.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "stream-browserify": "^3.0.0",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "react-app-rewired": "^2.2.1"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "CI=true react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -26,6 +41,8 @@
   "browserslist": {
     "production": [
       ">0.2%",
+      "not ie <= 99",
+      "not android <= 4.4.4",
       "not dead",
       "not op_mini all"
     ],
